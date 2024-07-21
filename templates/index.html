@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ .Title }}</title>
+    <script src="https://unpkg.com/htmx.org@1.4.0"></script>
+  </head>
+  <body>
+    <h1>{{ .Message }}</h1>
+    <form hx-post="/submit" hx-target="#result" hx-swap="afterend">
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+    <hr />
+    <h1>Counter: <span id="counter">{{ .Counter }}</span></h1>
+    <button hx-post="/increment" hx-target="#counter">Increment</button>
+  </body>
+</html>
