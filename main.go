@@ -29,7 +29,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 func formHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		message := r.FormValue("message")
-		data := PageData{Title: "Go + HTMX Example", Message: message}
+		data := PageData{Message: message}
 		tmpl := template.Must(template.ParseFiles("partials/message.html"))
 		tmpl.Execute(w, data)
 	}

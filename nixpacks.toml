@@ -1,0 +1,11 @@
+[language]
+name = "go"
+
+[phases.build]
+commands = ["go build -o myapp main.go"]
+
+[phases.start]
+commands = ["./myapp"]
+
+[variables]
+PORT = "8080"
